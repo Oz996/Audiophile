@@ -1,0 +1,19 @@
+@use './sass/' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: 'Manrope', sans-serif;
+}
+body{
+  background-color: $primary-background;
+}
+// globals
+
+a{
+  text-decoration: none;
+}

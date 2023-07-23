@@ -1,0 +1,27 @@
+@mixin paragaph {
+}
+
+@mixin button-first {
+  background-color: $primary-orange;
+  min-width: 16rem;
+  min-height: 4.8rem;
+  &:hover {
+    background-color: $secondary-orange;
+  }
+}
+@mixin button-second {
+  background-color: black;
+  color: white;
+  min-width: 16rem;
+  min-height: 4.8rem;
+}
+@mixin button-third {
+  background-color: white;
+  min-width: 16rem;
+  min-height: 4.8rem;
+  border: 1px solid black;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
