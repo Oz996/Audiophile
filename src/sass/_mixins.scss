@@ -1,12 +1,22 @@
+@use "./colors" as *;
 @mixin paragaph {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
 }
 
 @mixin button-first {
   background-color: $primary-orange;
+  color: white;
   min-width: 16rem;
   min-height: 4.8rem;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
   &:hover {
     background-color: $secondary-orange;
+    transition: .3s;
   }
 }
 @mixin button-second {
@@ -14,12 +24,16 @@
   color: white;
   min-width: 16rem;
   min-height: 4.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 @mixin button-third {
   background-color: white;
   min-width: 16rem;
   min-height: 4.8rem;
   border: 1px solid black;
+  text-transform: uppercase;
+  cursor: pointer;
   &:hover {
     background-color: black;
     color: white;

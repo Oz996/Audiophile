@@ -1,0 +1,51 @@
+@use "../../sass/" as *;
+.hero-banner {
+  width: 100%;
+  height: 50%;
+
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+}
+.width-div {
+  width: 90%;
+  margin: 0 auto;
+
+  .banner-div {
+    position: fixed;
+    top: 30%;
+    left: 10%;
+    width: 30%;
+    h1 {
+      font-size: 5.6rem;
+      font-weight: 700;
+      line-height: 5.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: white;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+    span {
+      color: rgb(160, 160, 160);
+      font-family: Manrope;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+    }
+    p {
+      @include paragaph;
+      color: white;
+      margin-bottom: 3rem;
+    }
+    button {
+      @include button-first;
+        
+    }
+  }
+}
