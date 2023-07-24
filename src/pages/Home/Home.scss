@@ -1,23 +1,30 @@
 @use "../../sass/" as *;
 .hero-banner {
   width: 100%;
-  height: 50%;
+  height: 75vh;
+  background-color: $secondary-dark;
+
+  display: flex;
+  figure {
+    width: 100%;
+    height: 120%;
+    position: relative;
+    bottom: 20%;
+    right: 10%;
+  }
 
   img {
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
     height: 100%;
   }
 }
 .width-div {
-  width: 90%;
+  width: 60%;
   margin: 0 auto;
+  display: flex;
 
   .banner-div {
-    position: fixed;
-    top: 30%;
-    left: 10%;
-    width: 30%;
     h1 {
       font-size: 5.6rem;
       font-weight: 700;
@@ -29,7 +36,7 @@
       margin-bottom: 3rem;
     }
     span {
-      color: rgb(160, 160, 160);
+      color: rgb(144, 144, 144);
       font-family: Manrope;
       font-size: 14px;
       font-style: normal;
@@ -42,10 +49,122 @@
       @include paragaph;
       color: white;
       margin-bottom: 3rem;
+      width: 60%;
     }
     button {
       @include button-first;
-        
     }
   }
+
+  //
+}
+.grid-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  width: 111rem;
+  margin: 0 auto;
+}
+.speaker-section-orange {
+  height: 56rem;
+  background-color: $primary-orange;
+  margin: 0 auto;
+  margin-top: 20rem;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: end;
+
+  div {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    img {
+      width: 42%;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      width: 35%;
+      h2 {
+        color: white;
+        font-size: 5.6rem;
+        font-weight: 700;
+        line-height: 5.8rem;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+      }
+      p {
+        @include paragaph;
+        color: white;
+      }
+      button {
+        @include button-second;
+      }
+    }
+  }
+}
+.speaker-section {
+  margin: 0 auto;
+  position: relative;
+  img {
+    border-radius: 0.8rem;
+    width: 100%;
+    height: auto;
+
+  }
+  div {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: flex-start;
+    position: absolute;
+    top: 30%;
+    left: 11%;
+    // position: relative;
+    // bottom: 23rem;
+
+    h2 {
+      @include title;
+    }
+    button {
+      @include button-third;
+    }
+  }
+}
+.earphones-home-div {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  .earphones-home {
+    img{
+      border-radius: 0.8rem;
+    }
+  }
+  .earphones-home-second {
+    border-radius: 0.8rem;
+    background-color: $secondary-background;
+    width: 54rem;
+    height: 32rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10rem;
+    gap: 3rem;
+    h2{
+      @include title;
+      width: 60%;
+    }
+    button{
+      @include button-third
+    }
+  }
+}
+
+
+.mt {
+  margin-top: 25rem;
 }

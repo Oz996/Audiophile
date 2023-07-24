@@ -6,7 +6,7 @@ header {
   height: 12vh;
 
   nav {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
     height: inherit;
     border-bottom: 1px solid rgb(92, 92, 92);
@@ -14,17 +14,19 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    img{
+      @include navlink;
+    }
 
     ul {
       display: flex;
-      gap: 2rem;
+      gap: 3.4rem;
       a {
-        color: white;
-        font-size: 1.63rem;
+        @include navlink
       }
     }
     .cart-icon {
-      color: white;
+      @include navlink;
     }
   }
 }

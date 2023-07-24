@@ -1,0 +1,28 @@
+@use '../../sass/' as *;
+
+.aside {
+  margin: 0 auto;
+  margin-top: 15rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    border-radius: 0.8rem;
+  }
+  h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 4.4rem;
+    letter-spacing: 1.429px;
+    text-transform: uppercase;
+    width: 80%;
+    margin-bottom: 3rem;
+  }
+  span{
+    color: $primary-orange;
+  }
+  p{
+    @include paragaph;
+    width: 75%;
+  }
+}

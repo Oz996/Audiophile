@@ -1,0 +1,46 @@
+@use "../../sass/" as *;
+
+.grid {
+  @include grid-3;
+  gap: 3rem;
+  width: 111rem;
+  margin: 0 auto;
+  margin-top: 13rem;
+  a {
+    color: black;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      span {
+        color: #5b5a5a;
+        font-size: 1.3rem;
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        &:hover {
+          color: $primary-orange;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1.286px;
+    text-transform: uppercase;
+  }
+  img {
+    width: 60%;
+  }
+}

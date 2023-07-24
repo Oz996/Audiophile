@@ -5,37 +5,70 @@
   font-weight: 500;
   line-height: 25px;
 }
+@mixin navlink {
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.5rem;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: white;
+
+  &:hover {
+    color: $primary-orange;
+    transition: 0.1s;
+  }
+}
+@mixin title {
+font-size: 2.8rem;
+font-weight: 700;
+letter-spacing: .2rem;
+text-transform: uppercase;
+}
+
+@mixin grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
 
 @mixin button-first {
   background-color: $primary-orange;
   color: white;
-  min-width: 16rem;
-  min-height: 4.8rem;
+  width: 16rem;
+  height: 4.8rem;
   text-transform: uppercase;
   border: none;
   cursor: pointer;
   &:hover {
     background-color: $secondary-orange;
-    transition: .3s;
+    transition: 0.3s;
   }
 }
 @mixin button-second {
   background-color: black;
   color: white;
-  min-width: 16rem;
-  min-height: 4.8rem;
+  width: 16rem;
+  height: 4.8rem;
   text-transform: uppercase;
+  border: none;
   cursor: pointer;
+  &:hover{
+    background-color: rgb(61, 61, 61);
+    transition: 0.3s;
+  }
 }
 @mixin button-third {
-  background-color: white;
-  min-width: 16rem;
-  min-height: 4.8rem;
+  background-color: inherit;
+  width: 16rem;
+  height: 4.8rem;
   border: 1px solid black;
   text-transform: uppercase;
   cursor: pointer;
   &:hover {
     background-color: black;
     color: white;
+    transition: 0.3s;
   }
 }
+
