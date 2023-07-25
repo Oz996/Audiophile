@@ -8,7 +8,7 @@ import CatergoryRow from "../../components/CategoryRow/CatergoryRow";
 import Aside from "../../components/Aside/Aside";
 
 const Home = () => {
-  const { data, isLoading } = useQuery({
+  const { data } = useQuery({
     queryKey: ["products"],
     queryFn: getProducts,
   });
