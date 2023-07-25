@@ -1,8 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import "./Home.scss";
 import { getProducts } from "../../api/products";
-import header from "/assets/home/desktop/image-hero.jpg";
-import speakerBig from "/assets/home/desktop/image-speaker-zx9.png";
+import speakerBig from "/assets/home/desktop/speakers.svg";
 import speaker from "/assets/home/desktop/image-speaker-zx7.jpg";
 import earphones from "/assets/home/desktop/image-earphones-yx1.jpg";
 import CatergoryRow from "../../components/CategoryRow/CatergoryRow";
@@ -21,20 +20,10 @@ const Home = () => {
           <div className="width-div mt">
             <div className="banner-div">
               <span>new product</span>
-              {isLoading ? (
-                <span>loading...</span>
-              ) : (
-                <>
-                  <h1>{data[3]?.name}</h1>
-                  <p>{data[3]?.description}</p>
-                  <button>see product</button>
-                </>
-              )}
+              <h1>{data && data[3]?.name}</h1>
+              <p>{data && data[3]?.description}</p>
+              <button>see product</button>
             </div>
-
-            <figure>
-              <img src={header} alt="hero" />
-            </figure>
           </div>
         </div>
       </main>
@@ -48,8 +37,8 @@ const Home = () => {
           <div>
             <img src={speakerBig} alt="speakers" />
             <div>
-              <h2>{data[5]?.name}</h2>
-              <p>{data[5]?.description}</p>
+              <h2>{data && data[5]?.name}</h2>
+              <p>{data && data[5]?.description}</p>
               <button>See Product</button>
             </div>
           </div>
@@ -58,7 +47,7 @@ const Home = () => {
         <article className="speaker-section">
           <img src={speaker} alt="speakers" />
           <div>
-            <h2>{data[4]?.name}</h2>
+            <h2>{data && data[4]?.name}</h2>
             <button>See Product</button>
           </div>
         </article>
@@ -68,12 +57,12 @@ const Home = () => {
             <img src={earphones} alt="earphones" />
           </div>
           <div className="earphones-home-second">
-                <h2>{data[0]?.name}</h2>
-                <button>See Product</button>
+            <h2>{data && data[0]?.name}</h2>
+            <button>See Product</button>
           </div>
         </div>
 
-        <Aside/>
+        <Aside />
       </section>
     </>
   );

@@ -1,4 +1,4 @@
-@use './sass/' as *;
+@use "./sass/" as *;
 
 * {
   margin: 0;
@@ -7,13 +7,19 @@
 }
 html {
   font-size: 62.5%;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
 }
-body{
+body {
   background-color: $primary-background;
 }
 // globals
 
-a{
+a {
   text-decoration: none;
+}
+.category-header {
+  @include header;
+}
+.card-row {
+  @include card-row;
 }

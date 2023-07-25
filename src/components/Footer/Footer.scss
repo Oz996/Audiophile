@@ -1,0 +1,65 @@
+@use "../../sass/" as *;
+
+footer {
+  background-color: $primary-dark;
+  width: 100%;
+  height: 36.5rem;
+  margin-top: 20rem;
+
+  .footer-section {
+    width: 111rem;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+
+    .footer-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4rem;
+
+      img {
+        width: 14.3rem;
+        height: 2.5rem;
+      }
+      p {
+        @include paragaph;
+        color: $paragraph-dark;
+        max-width: 70%;
+      }
+      .copyright {
+        font-weight: 700;
+      }
+    }
+  }
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    bottom: 24%;
+
+    ul {
+      display: flex;
+      gap: 3.4rem;
+      a {
+        @include navlink;
+      }
+    }
+    .footer-icons{
+        display: flex;
+        justify-content: end;
+        gap: 1.6rem;
+        position: relative;
+        top: 30%;
+        .footer-icon{
+            color: white;
+            cursor: pointer;
+            &:hover{
+                color: $primary-orange;
+                transition: .2s;
+            }
+        }
+    }
+  }
+}

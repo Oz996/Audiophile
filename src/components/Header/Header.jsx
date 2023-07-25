@@ -12,10 +12,10 @@ export const Header = () => {
             <img src={logo} alt="logo" />
           </NavLink>
           <ul>
-            <NavLink>Home</NavLink>
-            <NavLink>Headphones</NavLink>
-            <NavLink>Speakers</NavLink>
-            <NavLink>Earphones</NavLink>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="headphones">Headphones</NavLink>
+            <NavLink to="speakers">Speakers</NavLink>
+            <NavLink to="earphones">Earphones</NavLink>
           </ul>
           <AiOutlineShoppingCart size={28} className="cart-icon" />
         </nav>

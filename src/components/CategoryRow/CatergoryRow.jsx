@@ -8,7 +8,7 @@ import arrow from "/assets/arrow.svg";
 const CatergoryRow = () => {
   return (
     <div className="grid">
-      <Link to="headphones">
+      <Link to="/headphones">
         <div>
           <img src={headphones} alt="headphones" />
           <h2>Headphones</h2>
@@ -18,7 +18,7 @@ const CatergoryRow = () => {
           </div>
         </div>
       </Link>
-      <Link to="speakers">
+      <Link to="/speakers">
         <div>
           <img src={speakers} alt="speakers" />
           <h2>Speakers</h2>
@@ -28,7 +28,7 @@ const CatergoryRow = () => {
           </div>
         </div>
       </Link>
-      <Link to="earphones">
+      <Link to="/earphones">
         <div>
           <img src={earphones} alt="earphones" />
           <h2>Earphones</h2>

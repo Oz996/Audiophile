@@ -1,0 +1,26 @@
+@use "../../sass/" as *;
+
+figure{
+
+    img{
+        width: 55rem;
+    }
+}
+
+article{
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    justify-content: center;
+
+    h2{
+        @include product-title;
+    }
+    p{
+        @include paragaph;
+        max-width: 90%;
+    }
+    button{
+        @include button-first
+    }
+}
