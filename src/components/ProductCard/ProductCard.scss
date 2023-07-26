@@ -7,7 +7,7 @@ figure{
     }
 }
 
-article{
+.product-card{
     display: flex;
     gap: 3rem;
     flex-direction: column;
@@ -20,7 +20,7 @@ article{
         @include paragaph;
         max-width: 90%;
     }
-    button{
+    .product-button{
         @include button-first
     }
 }

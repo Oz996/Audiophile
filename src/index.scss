@@ -23,3 +23,10 @@ a {
 .card-row {
   @include card-row;
 }
+.flex{
+  display: flex;
+
+}
+.ml{
+  margin-left: 1rem;
+}

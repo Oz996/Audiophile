@@ -1,4 +1,4 @@
-@use '../../sass/' as *;
+@use "../../sass/" as *;
 
 .aside {
   margin: 0 auto;
@@ -20,10 +20,10 @@
     width: 80%;
     margin-bottom: 3rem;
   }
-  span{
+  span {
     color: $primary-orange;
   }
-  p{
+  p {
     @include paragaph;
     width: 75%;
   }

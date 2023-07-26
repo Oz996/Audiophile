@@ -1,0 +1,30 @@
+@use "../../sass/" as *;
+
+.add-button {
+  height: 4.8rem;
+  width: 4rem;
+  background-color: $secondary-background;
+  border: none;
+  color: $paragraph-dark;
+  font-weight: 700;
+  font-size: 1.4rem;
+  cursor: pointer;
+  &:hover {
+    color: $primary-orange;
+    transition: 0.2s;
+  }
+}
+.add-input {
+  width: 5rem;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  background-color: $secondary-background;
+}
+.product-price {
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 700;
+}

@@ -14,9 +14,9 @@ const App = () => {
         <Route element={<Header />}>
           <Route path="/" element={<Home />} />
           <Route path="/speakers" element={<Speakers />} />
-          <Route path="/headphones" element={<Headphones/>}/>
-          <Route path="/earphones" element={<Earphones/>}/>
-          <Route path="/product/:id" element={<Product/>}/>
+          <Route path="/headphones" element={<Headphones />} />
+          <Route path="/earphones" element={<Earphones />} />
+          <Route path="/:slug" element={<Product />} />
         </Route>
       </Routes>
       <Footer />

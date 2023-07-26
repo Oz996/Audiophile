@@ -3,11 +3,11 @@ import "./ProductCard.scss";
 
 const ProductCard = ({ data }) => {
   return (
-    <article>
+    <article className="product-card">
       <h2>{data?.name}</h2>
       <p>{data?.description}</p>
-      <Link to={`/product/${data?.id}`}>
-        <button>See Product</button>
+      <Link to={`/${data?.slug}`}>
+        <button className="product-button">See Product</button>
       </Link>
     </article>
   );
