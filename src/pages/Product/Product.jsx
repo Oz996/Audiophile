@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import "./Product.scss";
 import { getProductBySlug } from "../../api/products";
 import ProductFigure from "../../components/ProductCard/ProductFigure";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ProductDetails from "../../components/ProductDetails/ProductDetails";
 import Row from "../../components/Row/Row";
 import CatergoryRow from "../../components/CategoryRow/CatergoryRow";
@@ -10,19 +10,21 @@ import Aside from "../../components/Aside/Aside";
 
 const Product = () => {
   const { slug } = useParams();
-
   const { data } = useQuery(["product", slug], () => getProductBySlug(slug));
   console.log(data);
 
+  const navigate = useNavigate();
+
   return (
     <>
-      <div>
-        <div className="product-header"></div>
-        {!data && <div>Product not found</div>}
-        <div className="card-row">
-          <ProductFigure data={data} />
-          <ProductDetails data={data} />
-        </div>
+      <div className="product-header"></div>
+      {!data && <div>Product not found</div>}
+      <div className="back-link">
+        <span onClick={() => navigate(-1)}>Go back</span>
+      </div>
+      <div className="card-row">
+        <ProductFigure data={data} />
+        <ProductDetails data={data} />
       </div>
       <article className="features-div">
         <div className="features">

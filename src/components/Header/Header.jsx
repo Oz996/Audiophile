@@ -4,18 +4,29 @@ import "./Header.scss";
 import logo from "/assets/logo.svg";
 
 export const Header = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
   return (
     <>
       <header>
         <nav>
-          <NavLink>
+          <NavLink to="/" onClick={scrollToTop}>
             <img src={logo} alt="logo" />
           </NavLink>
           <ul>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="headphones">Headphones</NavLink>
-            <NavLink to="speakers">Speakers</NavLink>
-            <NavLink to="earphones">Earphones</NavLink>
+            <NavLink to="/" onClick={scrollToTop}>
+              Home
+            </NavLink>
+            <NavLink to="headphones" onClick={scrollToTop}>
+              Headphones
+            </NavLink>
+            <NavLink to="speakers" onClick={scrollToTop}>
+              Speakers
+            </NavLink>
+            <NavLink to="earphones" onClick={scrollToTop}>
+              Earphones
+            </NavLink>
           </ul>
           <AiOutlineShoppingCart size={28} className="cart-icon" />
         </nav>

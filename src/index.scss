@@ -12,6 +12,7 @@ html {
 body {
   background-color: $primary-background;
 }
+
 // globals
 
 a {
@@ -23,10 +24,35 @@ a {
 .card-row {
   @include card-row;
 }
-.flex{
+.flex {
   display: flex;
-
 }
-.ml{
+.ml {
   margin-left: 1rem;
+}
+.back-link {
+  width: 111rem;
+  margin: 0 auto;
+
+  span {
+    @include paragaph;
+    cursor: pointer;
+    position: absolute;
+    top: 20%;
+    &:hover {
+      color: $primary-orange;
+      transition: 0.2s;
+    }
+  }
+}
+.new-div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  .new {
+    color: $primary-orange;
+    font-size: 1.4rem;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+  }
 }

@@ -6,8 +6,11 @@ import { Link } from "react-router-dom";
 import arrow from "/assets/arrow.svg";
 
 const CatergoryRow = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
   return (
-    <div className="grid">
+    <div className="grid" onClick={scrollToTop}>
       <Link to="/headphones">
         <div>
           <img src={headphones} alt="headphones" />
@@ -18,7 +21,7 @@ const CatergoryRow = () => {
           </div>
         </div>
       </Link>
-      <Link to="/speakers">
+      <Link to="/speakers" onClick={scrollToTop}>
         <div>
           <img src={speakers} alt="speakers" />
           <h2>Speakers</h2>
@@ -28,7 +31,7 @@ const CatergoryRow = () => {
           </div>
         </div>
       </Link>
-      <Link to="/earphones">
+      <Link to="/earphones" onClick={scrollToTop}>
         <div>
           <img src={earphones} alt="earphones" />
           <h2>Earphones</h2>

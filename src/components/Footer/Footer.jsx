@@ -5,6 +5,9 @@ import { ImFacebook2, ImTwitter } from "react-icons/im";
 import { FiInstagram } from "react-icons/fi";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
   return (
     <footer>
       <div className="footer-section">
@@ -20,10 +23,18 @@ const Footer = () => {
         </div>
         <div className="footer-links">
           <ul>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="headphones">Headphones</NavLink>
-            <NavLink to="speakers">Speakers</NavLink>
-            <NavLink to="earphones">Earphones</NavLink>
+            <NavLink to="/" onClick={scrollToTop}>
+              Home
+            </NavLink>
+            <NavLink to="headphones" onClick={scrollToTop}>
+              Headphones
+            </NavLink>
+            <NavLink to="speakers" onClick={scrollToTop}>
+              Speakers
+            </NavLink>
+            <NavLink to="earphones" onClick={scrollToTop}>
+              Earphones
+            </NavLink>
           </ul>
           <div className="footer-icons">
             <ImFacebook2 size={26} className="footer-icon" />

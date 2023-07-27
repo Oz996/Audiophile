@@ -1,12 +1,17 @@
-import './ProductCard.scss'
+import { Link } from "react-router-dom";
+import "./ProductCard.scss";
 
-const ProductFigure = ({data}) => {
-
+const ProductFigure = ({ data }) => {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
-    <figure>
+    <Link to={`/${data?.slug}`} onClick={scrollToTop}>
+      <figure>
         <img src={data?.image?.desktop} alt={data?.name} />
-    </figure>
-  )
-}
+      </figure>
+    </Link>
+  );
+};
 
-export default ProductFigure
+export default ProductFigure;
