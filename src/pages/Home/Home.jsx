@@ -8,7 +8,7 @@ import Aside from "../../components/Aside/Aside";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const { data } = useQuery({
+  const { data = [] } = useQuery({
     queryKey: ["products"],
     queryFn: getProducts,
   });
@@ -22,9 +22,12 @@ const Home = () => {
           <div className="width-div mt">
             <div className="banner-div">
               <span>new product</span>
-              <h1>{data && data[3]?.name}</h1>
-              <p>{data && data[3]?.description}</p>
-              <Link to={data && `/${data[3]?.slug}`}>
+              <h1>{data[3]?.name}</h1>
+              <p>
+                Experience natural, lifelike audio and exceptional build quality
+                made for the passionate music enthusiast.
+              </p>
+              <Link to={`/${data[3]?.slug}`}>
                 <button>see product</button>
               </Link>
             </div>
@@ -41,9 +44,12 @@ const Home = () => {
           <div>
             <img src={speakerBig} alt="speakers" />
             <div>
-              <h2>{data && data[5]?.name}</h2>
-              <p>{data && data[5]?.description}</p>
-              <Link to={data && `/${data[5]?.slug}`} onClick={scrollToTop}>
+              <h2>{data[5]?.name}</h2>
+              <p>
+                Upgrade to premium speakers that are phenomenally built to
+                deliver truly remarkable sound.
+              </p>
+              <Link to={`/${data[5]?.slug}`} onClick={scrollToTop}>
                 <button>See Product</button>
               </Link>
             </div>
@@ -52,8 +58,8 @@ const Home = () => {
 
         <article className="speaker-section">
           <div>
-            <h2>{data && data[4]?.name}</h2>
-            <Link to={data && `/${data[4]?.slug}`} onClick={scrollToTop}>
+            <h2>{data[4]?.name}</h2>
+            <Link to={`/${data[4]?.slug}`} onClick={scrollToTop}>
               <button>See Product</button>
             </Link>
           </div>
@@ -64,8 +70,8 @@ const Home = () => {
             <img src={earphones} alt="earphones" />
           </div>
           <div className="earphones-home-second">
-            <h2>{data && data[0]?.name}</h2>
-            <Link to={data && `/${data[0]?.slug}`} onClick={scrollToTop}>
+            <h2>{data[0]?.name}</h2>
+            <Link to={`/${data[0]?.slug}`} onClick={scrollToTop}>
               <button>See Product</button>
             </Link>
           </div>

@@ -8,18 +8,16 @@ import { useEffect, useState } from "react";
 
 const Earphones = () => {
   const [product, setProduct] = useState([]);
-  const { data } = useQuery({
+  const { data = [] } = useQuery({
     queryKey: ["products"],
     queryFn: getProducts,
   });
 
   useEffect(() => {
-    if (data) {
-      const filteredProducts = data.filter(
-        (product) => product.category === "earphones"
-      );
-      setProduct(filteredProducts)
-    }
+    const filteredProducts = data.filter(
+      (product) => product.category === "earphones"
+    );
+    setProduct(filteredProducts);
   }, [data]);
 
   return (

@@ -4,7 +4,7 @@ const ProductDetails = ({ data }) => {
   return (
     <main className="product-card">
       <div className="new-div">
-        {data?.new && <span className="new">New product</span>}
+        <span className="new">New product</span>
         <h2>{data?.name}</h2>
       </div>
       <p>{data?.description}</p>
