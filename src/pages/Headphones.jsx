@@ -4,55 +4,41 @@ import ProductFigure from "../components/ProductCard/ProductFigure";
 import ProductCard from "../components/ProductCard/ProductCard";
 import CatergoryRow from "../components/CategoryRow/CatergoryRow";
 import Aside from "../components/Aside/Aside";
+import { useEffect, useState } from "react";
 
 const Headphones = () => {
+  const [product, setProduct] = useState([]);
   const { data } = useQuery({
     queryKey: ["products"],
     queryFn: getProducts,
   });
 
-  const productOne = () => {
+  useEffect(() => {
     if (data) {
-      const product = data[3];
-      return product;
+      const filteredProducts = data.filter(
+        (product) => product.category === "headphones"
+      );
+      setProduct(filteredProducts);
     }
-    return [];
-  };
-  const productTwo = () => {
-    if (data) {
-      const product = data[2];
-      return product;
-    }
-    return [];
-  };
-  const productThree = () => {
-    if (data) {
-      const product = data[1];
-      return product;
-    }
-    return [];
-  };
+  }, [data]);
 
-  const headphoneOne = productOne();
-  const headphoneTwo = productTwo();
-  const headphoneThree = productThree();
   return (
     <div>
       <h1 className="category-header">Headphones</h1>
       <div className="card-row">
-        <ProductFigure data={headphoneOne} />
-        <ProductCard data={headphoneOne} />
+        <ProductFigure data={product[2]} />
+        <ProductCard data={product[2]} />
       </div>
       <div className="card-row">
-        <ProductCard data={headphoneTwo} />
-        <ProductFigure data={headphoneTwo} />
+        <ProductCard data={product[1]} />
+        <ProductFigure data={product[1]} />
       </div>
       <div className="card-row">
-        <ProductFigure data={headphoneThree} />
-        <ProductCard data={headphoneThree} />
+        <ProductFigure data={product[0]} />
+        <ProductCard data={product[0]} />
       </div>
-      <CatergoryRow/>
-      <Aside/>
+      <CatergoryRow />
+      <Aside />
     </div>
   );
 };
