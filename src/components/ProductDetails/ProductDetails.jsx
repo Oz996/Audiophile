@@ -1,6 +1,8 @@
+import useCartStore from "../../zustand/cartStore";
 import "./ProductDetails.scss";
 
 const ProductDetails = ({ data }) => {
+  const addToCart = useCartStore((state)=> state.addToCart)
   return (
     <main className="product-card">
       <div className="new-div">
@@ -13,7 +15,7 @@ const ProductDetails = ({ data }) => {
         <button className="add-button">-</button>
         <input type="text" className="add-input" />
         <button className="add-button">+</button>
-        <button className="product-button ml">Add To Cart</button>
+        <button className="product-button ml" onClick={() => addToCart(data)}>Add To Cart</button>
       </div>
     </main>
   );

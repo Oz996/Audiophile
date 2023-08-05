@@ -1,0 +1,111 @@
+@use "../../sass/" as *;
+
+.cart-modal {
+}
+.overlay {
+  background-color: black;
+  opacity: 0.4;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  bottom: 0;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.cart-div,
+.cart-div-bottom {
+  display: flex;
+  justify-content: space-between;
+  .remove-prev {
+    @include paragaph;
+    color: $paragraph-dark;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+.modal-content {
+  width: 38rem;
+  height: 49rem;
+  border-radius: 0.8rem;
+  position: absolute;
+  right: 21%;
+  top: 120%;
+  background-color: white;
+  display: flex;
+  .modal-inner {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-block: 3rem;
+    .cart-div-bottom {
+      margin-top: auto;
+      margin-bottom: 1.5rem;
+      :nth-child(1){
+        @include paragaph;
+        color: $paragraph-dark;
+        text-transform: uppercase;
+      }
+      :nth-child(2){
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      margin-top: 3.5rem;
+      .cart-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .cart-prev-btns {
+          display: flex;
+          button {
+            border: none;
+            background-color: $primary-background;
+            color: $paragraph-dark;
+            width: 1rem;
+            cursor: pointer;
+            &:hover {
+              color: $primary-orange;
+            }
+          }
+          input {
+            border: none;
+            background-color: $primary-background;
+            width: 4rem;
+            font-weight: 700;
+            text-align: center;
+          }
+        }
+      }
+      .cart-list-div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        margin-left: -3rem;
+        :nth-child(1) {
+          font-size: 1.5rem;
+          font-weight: 700;
+        }
+        :nth-child(2) {
+          font-size: 1.4rem;
+          font-weight: 600;
+          color: $paragraph-dark;
+        }
+      }
+
+      img {
+        width: 6.4rem;
+        height: 6.4rem;
+      }
+    }
+    .checkout-btn {
+      @include button-first;
+      width: 100%;
+    }
+  }
+}
