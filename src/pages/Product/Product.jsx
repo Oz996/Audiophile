@@ -20,7 +20,7 @@ const Product = () => {
       <div className="product-header"></div>
       {!data && <div>Product not found</div>}
       <div className="back-link">
-        <span onClick={() => navigate(-1)}>Go back</span>
+        <span className="back-link" onClick={() => navigate(-1)}>Go back</span>
       </div>
       <div className="card-row">
         <ProductFigure data={data} />

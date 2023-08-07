@@ -21,6 +21,7 @@ const Footer = () => {
           </p>
           <p className="copyright">Copyright 2023. All Rights Reserved</p>
         </div>
+        <div className="rectangle" />
         <div className="footer-links">
           <ul>
             <NavLink to="/" onClick={scrollToTop}>

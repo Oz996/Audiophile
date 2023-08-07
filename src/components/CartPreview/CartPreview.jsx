@@ -1,6 +1,10 @@
 import { useEffect, useRef } from "react";
 import useCartStore from "../../zustand/cartStore";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+
 import "./CartPreview.scss";
+import { useNavigate } from "react-router-dom";
+import CartCard from "../CartCard/CartCard";
 
 const CartPreview = ({ setCartModal }) => {
   const cartItems = useCartStore((state) => state.cartItems);
@@ -8,6 +12,7 @@ const CartPreview = ({ setCartModal }) => {
   const incrementQuantity = useCartStore((state) => state.incrementQuantity);
   const decrementQuantity = useCartStore((state) => state.decrementQuantity);
   const cartRef = useRef();
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.addEventListener("mousedown", (e) => {
@@ -27,7 +32,10 @@ const CartPreview = ({ setCartModal }) => {
       <div ref={cartRef} className="modal-content">
         <div className="modal-inner">
           {cartItems.length == 0 ? (
-            <div>Your cart is empty</div>
+            <div className="empty">
+              <AiOutlineShoppingCart size={22} className="cart-prev-icon" />
+              <span>Your cart is empty</span>
+            </div>
           ) : (
             <>
               <div className="cart-div">
@@ -40,10 +48,7 @@ const CartPreview = ({ setCartModal }) => {
                 {cartItems.map((item) => (
                   <li key={item?.id}>
                     <div className="cart-inner">
-                      <img src={item?.image?.desktop} alt="" />
-                      <div className="cart-list-div">
-                        <span>{item?.name}</span> <span>$ {item?.price}</span>
-                      </div>
+                        <CartCard item={item}/>
                       <div className="cart-prev-btns">
                         <button onClick={() => decrementQuantity(item.id)}>
                           -
@@ -67,7 +72,17 @@ const CartPreview = ({ setCartModal }) => {
               </div>
             </>
           )}
-          <button className="checkout-btn">Checkout</button>
+          {cartItems.length > 0 && (
+            <button
+              className="checkout-btn"
+              onClick={() => {
+                navigate("/cart");
+                setCartModal(false);
+              }}
+            >
+              Checkout
+            </button>
+          )}
         </div>
       </div>
     </div>

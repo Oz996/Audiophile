@@ -12,6 +12,12 @@ footer {
     margin: 0 auto;
     display: flex;
 
+    .rectangle {
+      position: absolute;
+      width: 10rem;
+      height: 0.4rem;
+      background-color: $primary-orange;
+    }
     .footer-text {
       display: flex;
       flex-direction: column;
@@ -25,7 +31,7 @@ footer {
       p {
         @include paragaph;
         color: $paragraph-dark;
-        max-width: 70%;
+        max-width: 78%;
       }
       .copyright {
         font-weight: 700;
@@ -46,20 +52,20 @@ footer {
         @include navlink;
       }
     }
-    .footer-icons{
-        display: flex;
-        justify-content: end;
-        gap: 1.6rem;
-        position: relative;
-        top: 30%;
-        .footer-icon{
-            color: white;
-            cursor: pointer;
-            &:hover{
-                color: $primary-orange;
-                transition: .2s;
-            }
+    .footer-icons {
+      display: flex;
+      justify-content: end;
+      gap: 1.6rem;
+      position: relative;
+      top: 30%;
+      .footer-icon {
+        color: white;
+        cursor: pointer;
+        transition: 0.2s;
+        &:hover {
+          color: $primary-orange;
         }
+      }
     }
   }
 }

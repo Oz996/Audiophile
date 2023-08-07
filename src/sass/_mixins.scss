@@ -14,10 +14,10 @@
   cursor: pointer;
   text-transform: uppercase;
   color: white;
+  transition: 0.1s;
 
   &:hover {
     color: $primary-orange;
-    transition: 0.1s;
   }
 }
 @mixin title {
@@ -48,9 +48,9 @@
   text-transform: uppercase;
   border: none;
   cursor: pointer;
+  transition: 0.3s;
   &:hover {
     background-color: $secondary-orange;
-    transition: 0.3s;
   }
 }
 @mixin button-second {
@@ -61,9 +61,9 @@
   text-transform: uppercase;
   border: none;
   cursor: pointer;
+  transition: 0.3s;
   &:hover {
     background-color: rgb(61, 61, 61);
-    transition: 0.3s;
   }
 }
 @mixin button-third {
@@ -74,10 +74,10 @@
   border: 1px solid black;
   text-transform: uppercase;
   cursor: pointer;
+  transition: 0.3s;
   &:hover {
     background-color: black;
     color: white;
-    transition: 0.3s;
   }
 }
 

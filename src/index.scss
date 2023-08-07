@@ -34,7 +34,7 @@ a {
   width: 111rem;
   margin: 0 auto;
 
-  span {
+  .back-link {
     @include paragaph;
     cursor: pointer;
     position: absolute;
