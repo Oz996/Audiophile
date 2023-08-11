@@ -13,7 +13,7 @@ const CatergoryRow = () => {
     <div className="grid" onClick={scrollToTop}>
       <Link to="/headphones">
         <div>
-          <img src={headphones} alt="headphones" />
+          <figure className="headphones"></figure>
           <h2>Headphones</h2>
           <div>
             <span>Shop</span>
@@ -23,7 +23,7 @@ const CatergoryRow = () => {
       </Link>
       <Link to="/speakers" onClick={scrollToTop}>
         <div>
-          <img src={speakers} alt="speakers" />
+          <figure className="speakers"></figure>
           <h2>Speakers</h2>
           <div>
             <span>Shop</span>
@@ -33,7 +33,7 @@ const CatergoryRow = () => {
       </Link>
       <Link to="/earphones" onClick={scrollToTop}>
         <div>
-          <img src={earphones} alt="earphones" />
+          <figure className="earphones"></figure>
           <h2>Earphones</h2>
           <div className="shop-div">
             <span>Shop</span>

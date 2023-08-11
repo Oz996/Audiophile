@@ -28,8 +28,8 @@ const CartPreview = ({ setCartModal }) => {
 
   return (
     <div className="cart-modal">
-      <div className="overlay"></div>
-      <div ref={cartRef} className="modal-content">
+      <div className="overlay fade-in-modal" />
+      <div ref={cartRef} className="modal-content fade-in">
         <div className="modal-inner">
           {cartItems.length == 0 ? (
             <div className="empty">
@@ -48,7 +48,7 @@ const CartPreview = ({ setCartModal }) => {
                 {cartItems.map((item) => (
                   <li key={item?.id}>
                     <div className="cart-inner">
-                        <CartCard item={item}/>
+                      <CartCard item={item} />
                       <div className="cart-prev-btns">
                         <button onClick={() => decrementQuantity(item.id)}>
                           -

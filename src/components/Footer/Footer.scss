@@ -11,6 +11,11 @@ footer {
     height: 100%;
     margin: 0 auto;
     display: flex;
+    @include tablet{
+      width: 90%;
+      margin-block: auto;
+      flex-direction: column;
+    }
 
     .rectangle {
       position: absolute;
@@ -32,6 +37,9 @@ footer {
         @include paragaph;
         color: $paragraph-dark;
         max-width: 78%;
+        @include tablet{
+          width: 85rem;
+        }
       }
       .copyright {
         font-weight: 700;

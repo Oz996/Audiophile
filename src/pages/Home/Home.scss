@@ -6,8 +6,11 @@
   background-image: url("/assets/home/desktop/image-hero.jpg");
   background-repeat: no-repeat;
   background-position: 90rem 15rem;
-
   display: flex;
+  @include tablet {
+    background-image: url("/assets/home/tablet/image-hero.jpg");
+  }
+
   figure {
     width: 100%;
     height: 120%;
@@ -26,6 +29,10 @@
   width: 111rem;
   margin: 0 auto;
   display: flex;
+  @include tablet {
+    align-items: center;
+    justify-content: center;
+  }
 
   .banner-div {
     h1 {
@@ -60,14 +67,8 @@
     }
   }
 }
-.grid-section {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-  width: 111rem;
-  margin: 0 auto;
-}
 .speaker-section-orange {
+  width: 111rem;
   height: 56rem;
   background-color: $primary-orange;
   margin: 0 auto;
@@ -76,11 +77,25 @@
   display: flex;
   justify-content: end;
   align-items: end;
+  background-image: url("/assets/home/desktop/speakers.svg");
+  background-repeat: no-repeat;
+  background-position: 15rem 10rem;
+  @include tablet {
+    width: 90%;
+    min-height: 75rem;
+    background-image: url("/assets/home/tablet/image-speaker-zx9.png");
+    background-size: 18rem;
+    background-position: 55% 6rem;
+  }
 
   div {
     display: flex;
+    justify-content: end;
+    @include tablet {
+      justify-content: center;
+      align-items: center;
+    }
     width: 80%;
-    margin: 0 auto;
     img {
       width: 45%;
     }
@@ -90,7 +105,9 @@
       flex-direction: column;
       gap: 4rem;
       width: 35%;
-      margin-left: 12rem;
+      margin-right: 10rem;
+      margin-bottom: 10rem;
+
       h2 {
         color: white;
         font-size: 5.6rem;
@@ -98,10 +115,18 @@
         line-height: 5.8rem;
         letter-spacing: 0.2rem;
         text-transform: uppercase;
+        @include tablet {
+          text-align: center;
+          font-size: 5.6rem;
+        }
       }
       p {
         @include paragaph;
         color: white;
+        @include tablet {
+          text-align: center;
+          width: 30rem;
+        }
       }
       button {
         @include button-second;
@@ -113,8 +138,21 @@
   margin: 0 auto;
   position: relative;
   background-image: url("/assets/home/desktop/image-speaker-zx7.jpg");
-  width: 100%;
-  height: 32rem;
+  width: 111rem;
+  min-height: 32rem;
+  border-radius: 0.8rem;
+  margin-block: 5rem;
+  @include tablet {
+    background-image: url("/assets/home/tablet/image-speaker-zx7.jpg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 90%;
+  }
+  @include mobile {
+    background-image: url("/assets/home/mobile/image-speaker-zx7.jpg");
+    background-size: cover;
+  }
   div {
     width: 80%;
     margin: 0 auto;
@@ -137,24 +175,51 @@
   display: flex;
   justify-content: center;
   gap: 2.5rem;
+  width: 111rem;
+  margin: 0 auto;
+  @include tablet {
+    width: 90%;
+  }
+  @include mobile {
+    flex-direction: column;
+  }
   .earphones-home {
-    img {
-      border-radius: 0.8rem;
+    background-image: url("/assets/home/desktop/image-earphones-yx1.jpg");
+    width: 54rem;
+    min-height: 32rem;
+    border-radius: 0.8rem;
+    @include tablet {
+      width: 50%;
+      background-image: url("/assets/home/tablet/image-earphones-yx1.jpg");
+      background-size: cover;
+    }
+    @include mobile {
+      background-image: url("/assets/home/mobile/image-earphones-yx1.jpg");
+      background-size: contain;
+      height: 20rem;
     }
   }
   .earphones-home-second {
     border-radius: 0.8rem;
     background-color: $secondary-background;
     width: 54rem;
-    height: 32rem;
+    min-height: 32rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-left: 10rem;
     gap: 3rem;
+    @include tablet {
+      width: 50%;
+      height: 32rem;
+      padding-left: 5rem;
+      background-color: red;
+    }
+    @include mobile {
+      height: 20rem;
+    }
     h2 {
       @include title;
-      max-width: 60%;
     }
     button {
       @include button-third;

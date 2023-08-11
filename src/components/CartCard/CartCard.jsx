@@ -1,12 +1,18 @@
+import { Link } from "react-router-dom";
 import "./CartCard.scss";
 
 const CartCard = ({ item }) => {
-  const name = item?.name?.split(" ")[0]
+  const name = item?.name?.split(" ")[0];
   return (
     <>
-      <img src={item?.image?.desktop} alt="" />
+      <Link to={`/${item.slug}`}>
+        <img src={item?.image?.desktop} alt="" />
+      </Link>
       <div className="cart-list-div">
-        <span>{name}</span> <span>$ {item?.price}</span>
+        <Link to={`/${item.slug}`}>
+          <span>{name}</span>
+        </Link>
+        <span>$ {item?.price}</span>
       </div>
     </>
   );

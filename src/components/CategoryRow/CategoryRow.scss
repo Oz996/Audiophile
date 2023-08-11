@@ -1,11 +1,20 @@
 @use "../../sass/" as *;
 
 .grid {
-  @include grid-3;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 3rem;
   width: 111rem;
   margin: 0 auto;
-  margin-top: 13rem;
+  margin-top: 15rem;
+  @include tablet {
+    width: 100%;
+    margin-inline: 0;
+    padding-inline: 8rem;
+  }
+  @include mobile {
+    grid-template-columns: repeat(1, 1fr);
+  }
   a {
     color: black;
   }
@@ -15,9 +24,32 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+
     &:hover span {
       color: $primary-orange;
       transition: 0.3s;
+    }
+    figure {
+      width: 22rem;
+      height: 20rem;
+    }
+    .headphones {
+      background-image: url("/assets/shared/desktop/image-category-thumbnail-headphones.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+    }
+    .speakers {
+      background-image: url("/assets/shared/desktop/image-category-thumbnail-speakers.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+    }
+    .earphones {
+      background-image: url("/assets/shared/desktop/image-category-thumbnail-earphones.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
     }
 
     div {
@@ -39,8 +71,5 @@
     font-weight: 700;
     letter-spacing: 1.286px;
     text-transform: uppercase;
-  }
-  img {
-    max-width: 60%;
   }
 }

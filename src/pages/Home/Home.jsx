@@ -34,51 +34,42 @@ const Home = () => {
           </div>
         </div>
       </main>
-
-      <article className="width-div">
-        <CatergoryRow />
-      </article>
-
-      <section className="grid-section">
-        <article className="speaker-section-orange">
+      <CatergoryRow />
+      <article className="speaker-section-orange">
+        <div>
           <div>
-            <img src={speakerBig} alt="speakers" />
-            <div>
-              <h2>{data[5]?.name}</h2>
-              <p>
-                Upgrade to premium speakers that are phenomenally built to
-                deliver truly remarkable sound.
-              </p>
-              <Link to={`/${data[5]?.slug}`} onClick={scrollToTop}>
-                <button>See Product</button>
-              </Link>
-            </div>
-          </div>
-        </article>
-
-        <article className="speaker-section">
-          <div>
-            <h2>{data[4]?.name}</h2>
-            <Link to={`/${data[4]?.slug}`} onClick={scrollToTop}>
-              <button>See Product</button>
-            </Link>
-          </div>
-        </article>
-
-        <div className="earphones-home-div">
-          <div className="earphones-home">
-            <img src={earphones} alt="earphones" />
-          </div>
-          <div className="earphones-home-second">
-            <h2>{data[0]?.name}</h2>
-            <Link to={`/${data[0]?.slug}`} onClick={scrollToTop}>
+            <h2>{data[5]?.name}</h2>
+            <p>
+              Upgrade to premium speakers that are phenomenally built to deliver
+              truly remarkable sound.
+            </p>
+            <Link to={`/${data[5]?.slug}`} onClick={scrollToTop}>
               <button>See Product</button>
             </Link>
           </div>
         </div>
+      </article>
 
-        <Aside />
-      </section>
+      <article className="speaker-section">
+        <div>
+          <h2>{data[4]?.name}</h2>
+          <Link to={`/${data[4]?.slug}`} onClick={scrollToTop}>
+            <button>See Product</button>
+          </Link>
+        </div>
+      </article>
+
+      <article className="earphones-home-div">
+        <div className="earphones-home"/>
+        <div className="earphones-home-second">
+          <h2>Yx1 earphones</h2>
+          <Link to={`/${data[0]?.slug}`} onClick={scrollToTop}>
+            <button>See Product</button>
+          </Link>
+        </div>
+      </article>
+
+      <Aside />
     </>
   );
 };

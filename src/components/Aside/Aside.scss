@@ -8,8 +8,11 @@
   width: 111rem;
   margin: 0 auto;
   margin-top: 15rem;
-  img {
-    border-radius: 0.8rem;
+  @include tablet {
+    width: 90%;
+    flex-direction: column-reverse;
+    text-align: center;
+    margin-top: -10rem;
   }
   h2 {
     font-size: 4rem;
@@ -17,14 +20,38 @@
     line-height: 4.4rem;
     letter-spacing: 1.429px;
     text-transform: uppercase;
-    width: 80%;
     margin-bottom: 3rem;
+    width: 80%;
+    @include tablet {
+      margin: 0 auto;
+      margin-bottom: 3rem;
+    }
   }
   span {
     color: $primary-orange;
   }
   p {
     @include paragaph;
-    width: 77%;
+    width: 58rem;
+    @include tablet {
+      margin: 0 auto;
+    }
+  }
+  .aside-div {
+    width: 260rem;
+    height: 30rem;
+    background-image: url("/assets/shared/desktop/image-best-gear.jpg");
+    border-radius: 0.8rem;
+    margin-top: 20rem;
+    margin-bottom: 5rem;
+    @include tablet {
+      width: 100%;
+      background-image: url("/assets/shared/tablet/image-best-gear.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      border-radius: 0.8rem;
+    }
   }
 }

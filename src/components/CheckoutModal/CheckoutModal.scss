@@ -1,0 +1,77 @@
+@use "../../sass/" as *;
+
+.checkout-modal {
+  .checkout-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 3.5rem;
+    background-color: $primary-background;
+    border-radius: 0.8rem;
+    width: 54rem;
+    height: 58rem;
+    position: fixed;
+    top: 28%;
+    right: 35%;
+    padding: 5rem;
+    z-index: 1;
+    img {
+      width: 7rem;
+    }
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 3.6rem;
+      letter-spacing: 1.143px;
+      text-transform: uppercase;
+    }
+    p {
+      @include paragaph;
+      color: $paragraph-dark;
+    }
+    button {
+      @include button-first;
+      width: 100%;
+    }
+    .checkout-items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $secondary-background;
+      border-radius: .8rem;
+      padding: 1rem 2rem;
+      height: 12rem;
+
+      .cart-list-div {
+        display: flex;
+        align-items: center;
+      }
+      .total {
+        width: 45%;
+        height: 12rem;
+        padding: 1.5rem 2rem;
+        background-color: black;
+        border-radius: 0px 0.8rem 0.8rem 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        h1 {
+          color: $paragraph-dark;
+          font-family: Manrope;
+          font-size: 1.5rem;
+          font-weight: 500;
+          line-height: 2.5rem;
+        }
+        span {
+          color: $primary-background;
+          text-align: right;
+          font-size: 18px;
+          font-weight: 700;
+          text-transform: uppercase;
+          text-align: start;
+        }
+      }
+    }
+  }
+}

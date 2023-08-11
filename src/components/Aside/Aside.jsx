@@ -17,7 +17,7 @@ const Aside = () => {
           best place to buy your portable audio equipment.
         </p>
       </div>
-      <img src={aside} alt="aside-image" />
+      <div className="aside-div"/>
     </aside>
   );
 };

@@ -13,7 +13,7 @@ const ProductDetails = ({ data }) => {
       <span className="product-price">${data?.price}</span>
       <div className="flex">
         <button className="add-button">-</button>
-        <input type="text" className="add-input" />
+        <input type="text" className="add-input" value={1}/>
         <button className="add-button">+</button>
         <button className="product-button ml" onClick={() => addToCart(data)}>Add To Cart</button>
       </div>
