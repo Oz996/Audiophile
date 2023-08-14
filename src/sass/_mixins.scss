@@ -77,11 +77,15 @@
 }
 
 @mixin card-row {
-  width: 111rem;
+  width: 58%;
   margin: 0 auto;
   margin-top: 20rem;
   display: flex;
-  gap: 10rem;
+  gap: 10rem; 
+  @include tablet{
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 @mixin header {

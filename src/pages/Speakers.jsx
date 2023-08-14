@@ -27,7 +27,7 @@ export const Speakers = () => {
         <ProductFigure data={product[1]} />
         <ProductCard data={product[1]} />
       </div>
-      <div className="card-row">
+      <div className="card-row reverse">
         <ProductCard data={product[0]} />
         <ProductFigure data={product[0]} />
       </div>

@@ -28,6 +28,11 @@ a {
 .card-row {
   @include card-row;
 }
+.reverse{
+  @include tablet{
+    flex-direction: column-reverse;
+  }
+}
 .flex {
   display: flex;
 }
@@ -43,6 +48,9 @@ a {
     cursor: pointer;
     position: absolute;
     top: 20%;
+    @include tablet{
+      margin-left: 8rem;
+    }
     &:hover {
       color: $primary-orange;
       transition: 0.2s;

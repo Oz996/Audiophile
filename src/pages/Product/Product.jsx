@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import "./Product.scss";
 import { getProductBySlug } from "../../api/products";
-import ProductFigure from "../../components/ProductCard/ProductFigure";
 import { useNavigate, useParams } from "react-router-dom";
 import ProductDetails from "../../components/ProductDetails/ProductDetails";
 import Row from "../../components/Row/Row";
 import CatergoryRow from "../../components/CategoryRow/CatergoryRow";
 import Aside from "../../components/Aside/Aside";
+import ProductDetailsFigure from "../../components/ProductCard/ProductDetailsFigure";
 
 const Product = () => {
   const { slug } = useParams();
@@ -22,8 +22,8 @@ const Product = () => {
       <div className="back-link">
         <span className="back-link" onClick={() => navigate(-1)}>Go back</span>
       </div>
-      <div className="card-row">
-        <ProductFigure data={data} />
+      <div className="card-row-details">
+        <ProductDetailsFigure data={data} />
         <ProductDetails data={data} />
       </div>
       <article className="features-div">

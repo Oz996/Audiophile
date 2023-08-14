@@ -27,7 +27,7 @@ const Headphones = () => {
         <ProductFigure data={product[2]} />
         <ProductCard data={product[2]} />
       </div>
-      <div className="card-row">
+      <div className="card-row reverse">
         <ProductCard data={product[1]} />
         <ProductFigure data={product[1]} />
       </div>

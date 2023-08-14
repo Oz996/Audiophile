@@ -28,3 +28,33 @@
   font-style: normal;
   font-weight: 700;
 }
+.card-row-details {
+  width: 111rem;
+  margin: 0 auto;
+  margin-top: 20rem;
+  display: flex;
+  gap: 10rem;
+}
+.product-card {
+  @include tablet {
+    margin-left: -0.1rem;
+    width: 90%;
+    margin: 0 auto;
+    align-items: start;
+  }
+  .new-div {
+    h2 {
+      width: 27.5rem;
+      @include tablet {
+        text-align: start !important;
+        width: 30rem;
+        margin: 0;
+      }
+    }
+  }
+  p {
+    @include tablet {
+      width: 33rem !important;
+    }
+  }
+}

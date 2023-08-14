@@ -1,8 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import "./Home.scss";
 import { getProducts } from "../../api/products";
-import speakerBig from "/assets/home/desktop/speakers.svg";
-import earphones from "/assets/home/desktop/image-earphones-yx1.jpg";
 import CatergoryRow from "../../components/CategoryRow/CatergoryRow";
 import Aside from "../../components/Aside/Aside";
 import { Link } from "react-router-dom";

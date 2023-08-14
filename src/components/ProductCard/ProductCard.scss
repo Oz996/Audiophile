@@ -1,26 +1,53 @@
 @use "../../sass/" as *;
 
-figure{
-
-    img{
-        width: 55rem;
+figure {
+  img {
+    width: 55rem;
+    @include tablet {
+      width: 40rem; 
+      margin-bottom: -7rem;
     }
+    @include mobile {
+      width: 45rem;
+      margin-left: 0;
+    }
+  }
+}
+.details-img {
+  width: 30rem;
+  @include tablet {
+
+  }
 }
 
-.product-card{
-    display: flex;
-    gap: 3rem;
-    flex-direction: column;
-    justify-content: center;
-
-    h2{
-        @include product-title;
+.product-card {
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+  justify-content: center;
+  @include tablet {
+    align-items: center;
+    margin: 0 auto;
+    width: 50%
+  }
+  h2 {
+    @include product-title;
+    @include tablet {
+      width: 30rem;
+      text-align: center !important;
     }
-    p{
-        @include paragaph;
-        max-width: 90%;
+  }
+  p {
+    @include paragaph;
+    width: 41rem;
+    @include tablet {
+      width: 56rem !important;
     }
-    .product-button{
-        @include button-first
+    @include mobile {
+      width: 32rem;
     }
+  }
+  .product-button {
+    @include button-first;
+  }
 }
