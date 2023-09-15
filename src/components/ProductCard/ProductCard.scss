@@ -4,50 +4,56 @@ figure {
   img {
     width: 55rem;
     @include tablet {
-      width: 40rem; 
+      width: 35rem;
       margin-bottom: -7rem;
     }
     @include mobile {
-      width: 45rem;
-      margin-left: 0;
+      width: 30rem;
+      margin-left: -3rem;
     }
   }
 }
 .details-img {
-  width: 30rem;
-  @include tablet {
-
+  @include mobile {
+    margin: 0 auto;
+    margin-bottom: -5rem;
   }
 }
-
 .product-card {
   display: flex;
   gap: 3rem;
   flex-direction: column;
   justify-content: center;
+  margin: 0 auto;
   @include tablet {
-    align-items: center;
-    margin: 0 auto;
-    width: 50%
+    display: block;
   }
-  h2 {
+  @include mobile {
+  }
+  .card-title {
     @include product-title;
     @include tablet {
-      width: 30rem;
-      text-align: center !important;
+      margin-bottom: 2rem;
+    }
+    @include mobile {
+      width: 90%;
+      font-size: 3rem;
     }
   }
-  p {
+  .card-details {
     @include paragaph;
     width: 41rem;
     @include tablet {
-      width: 56rem !important;
+      width: 100%;
+      margin-bottom: 2rem;
     }
     @include mobile {
-      width: 32rem;
+      width: 100%;
     }
   }
   .product-button {
     @include button-first;
+    @include mobile {
+    }
   }
 }

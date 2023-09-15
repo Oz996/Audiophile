@@ -10,7 +10,7 @@ const Footer = () => {
   };
   return (
     <footer>
-      <div className="footer-section">
+      <section className="footer-section">
         <div className="footer-text">
           <img src={logo} alt="logo" />
           <p>
@@ -43,7 +43,7 @@ const Footer = () => {
             <FiInstagram size={26} className="footer-icon" />
           </div>
         </div>
-      </div>
+      </section>
     </footer>
   );
 };

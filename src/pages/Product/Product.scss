@@ -10,7 +10,7 @@
   gap: 13rem;
   margin-top: 13rem;
   margin-bottom: 15rem;
-  @include tablet{
+  @include tablet {
     width: 90%;
     flex-direction: column;
   }
@@ -19,13 +19,19 @@
     flex-direction: column;
     gap: 3rem;
     width: 70%;
-    @include tablet{
+    @include tablet {
       width: 95rem;
     }
-    p{
+    @include mobile{
+
+    }
+    p {
       width: 81%;
-      @include tablet{
+      @include tablet {
         width: 68%;
+      }
+      @include mobile {
+        width: 34%;
       }
     }
   }
@@ -42,32 +48,42 @@
 }
 .product-box {
   width: 20%;
+  margin-right: 10rem;
   h1 {
     text-align: center;
     margin-bottom: 2.5rem;
- 
-    @include tablet{
+
+    @include tablet {
       display: flex;
       width: 100rem;
     }
-    @include mobile{
-   
+    @include mobile {
+      flex-direction: column;
+      text-align: start;
+      margin-bottom: 4rem;
     }
   }
   .includes {
     display: flex;
     gap: 2rem;
-    @include tablet{
+    @include tablet {
       width: 30rem;
       position: relative;
       left: 40rem;
       bottom: 6.5rem;
     }
+    @include mobile {
+      left: 0;
+      bottom: 0;
+    }
     .item-quantity {
       @include paragaph;
       color: $primary-orange;
       font-weight: 700;
-      margin-left: 2.5rem;
+      margin-left: 0.5rem;
+      @include mobile {
+        margin: 0;
+      }
     }
     .item-content {
       margin-bottom: 1rem;
@@ -83,18 +99,36 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-bottom: 25rem;
-  @include tablet{
+  @include tablet {
+    width: 90%;
+    :nth-child(1) {
+
+    }
+    :nth-child(2) {
+
+    }
+    :nth-child(3) {
+      width: 100%;
+    }
+  }
+  @include mobile {
     display: flex;
     flex-direction: column;
   }
 
   img {
+    @include tablet {
+      width: 100%;
+    }
     border-radius: 0.8rem;
   }
 
   .gallery-image {
     grid-column: 2;
     grid-row: 1 / span 2;
+    @include tablet {
+
+    }
   }
 }
 .row-header {
@@ -105,7 +139,7 @@
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 15rem;
-  @include mobile{
+  @include mobile {
     margin-bottom: 4rem;
   }
 }

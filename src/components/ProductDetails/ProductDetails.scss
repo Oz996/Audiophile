@@ -34,6 +34,11 @@
   margin-top: 20rem;
   display: flex;
   gap: 10rem;
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
 }
 .product-card {
   @include tablet {
@@ -42,19 +47,33 @@
     margin: 0 auto;
     align-items: start;
   }
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
   .new-div {
-    h2 {
+    .details-title {
+      @include product-title;
       width: 27.5rem;
       @include tablet {
+        margin-bottom: 1rem !important;
+        font-size: 3rem;
         text-align: start !important;
         width: 30rem;
         margin: 0;
       }
+      @include mobile {
+      }
     }
   }
-  p {
+  .product-details {
+    @include paragaph;
     @include tablet {
       width: 33rem !important;
+      margin-bottom: 2rem;
+    }
+    @include mobile {
+      width: 30rem !important;
     }
   }
 }

@@ -2,7 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import "./Header.scss";
 import logo from "/assets/logo.svg";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CartPreview from "../CartPreview/CartPreview";
 import Hamburger from "/assets/shared/tablet/icon-hamburger.svg";
 import CatergoryRow from "../CategoryRow/CatergoryRow";
@@ -11,10 +11,18 @@ export const Header = () => {
   const [cartModal, setCartModal] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
   const cartRef = useRef();
+  const hamburgerRef = useRef();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
   console.log(cartModal);
+
+  useEffect(() => {
+    document.addEventListener("mousedown", (e) => {
+      if (hamburgerRef.current && !hamburgerRef.current.contains(e.target))
+        setShowCategories(false);
+    });
+  }, [hamburgerRef]);
 
   return (
     <>
@@ -29,7 +37,7 @@ export const Header = () => {
           <NavLink to="/" onClick={scrollToTop}>
             <img src={logo} alt="logo" className="logo" />
           </NavLink>
-          <ul>
+          <ul ref={hamburgerRef}>
             {!showCategories ? (
               <>
                 <NavLink to="/" onClick={scrollToTop} className="nav-link">
@@ -37,28 +45,37 @@ export const Header = () => {
                 </NavLink>
                 <NavLink
                   to="headphones"
-                  onClick={scrollToTop}
+                  onClick={() => {
+                    scrollToTop();
+                    setShowCategories(false);
+                  }}
                   className="nav-link"
                 >
                   Headphones
                 </NavLink>
                 <NavLink
                   to="speakers"
-                  onClick={scrollToTop}
+                  onClick={() => {
+                    scrollToTop();
+                    setShowCategories(false);
+                  }}
                   className="nav-link"
                 >
                   Speakers
                 </NavLink>
                 <NavLink
                   to="earphones"
-                  onClick={scrollToTop}
+                  onClick={() => {
+                    scrollToTop();
+                    setShowCategories(false);
+                  }}
                   className="nav-link"
                 >
                   Earphones
                 </NavLink>
               </>
             ) : (
-              <div className="nav-categories">
+              <div className="nav-categories slide-down">
                 <div>
                   <CatergoryRow />
                 </div>

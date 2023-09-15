@@ -35,6 +35,7 @@ a {
 }
 .flex {
   display: flex;
+  margin-top: 2rem;
 }
 .ml {
   margin-left: 1rem;
@@ -66,5 +67,6 @@ a {
     font-size: 1.4rem;
     letter-spacing: 1rem;
     text-transform: uppercase;
+    min-width: 90%;
   }
 }

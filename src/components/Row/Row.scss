@@ -11,6 +11,7 @@
   }
   @include mobile{
     grid-template-columns: repeat(1, 1fr);
+    gap: 7rem;
   }
 
   .row-div {
@@ -26,6 +27,8 @@
       height: 100%;
       @include mobile{
         width: 20rem;
+        margin: 0 auto;
+        margin-bottom: -10rem
       }
 
     }

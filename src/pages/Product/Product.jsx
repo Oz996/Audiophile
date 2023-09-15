@@ -20,7 +20,9 @@ const Product = () => {
       <div className="product-header"></div>
       {!data && <div>Product not found</div>}
       <div className="back-link">
-        <span className="back-link" onClick={() => navigate(-1)}>Go back</span>
+        <span className="back-link" onClick={() => navigate(-1)}>
+          Go back
+        </span>
       </div>
       <div className="card-row-details">
         <ProductDetailsFigure data={data} />
@@ -42,13 +44,13 @@ const Product = () => {
         </div>
       </article>
       <section className="gallery">
+        <img src={data?.gallery?.first?.desktop} alt="gallery-image" />
+        <img src={data?.gallery?.second?.desktop} alt="gallery-image" />
         <img
           src={data?.gallery?.third?.desktop}
           alt="gallery-image"
           className="gallery-image"
         />
-        <img src={data?.gallery?.first?.desktop} alt="gallery-image" />
-        <img src={data?.gallery?.second?.desktop} alt="gallery-image" />
       </section>
 
       <h1 className="row-header">You may also like</h1>

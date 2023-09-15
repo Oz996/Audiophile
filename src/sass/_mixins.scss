@@ -43,7 +43,7 @@
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s;
   &:hover {
     background-color: $secondary-orange;
   }
@@ -56,7 +56,7 @@
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s;
   &:hover {
     background-color: rgb(61, 61, 61);
   }
@@ -81,8 +81,8 @@
   margin: 0 auto;
   margin-top: 20rem;
   display: flex;
-  gap: 10rem; 
-  @include tablet{
+  gap: 10rem;
+  @include tablet {
     flex-direction: column;
     text-align: center;
   }
@@ -119,8 +119,8 @@
     @content;
   }
 }
-@mixin mobile{
-  @media screen and (max-width: 712px){
-    @content
+@mixin mobile {
+  @media screen and (max-width: 712px) {
+    @content;
   }
 }
