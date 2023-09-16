@@ -23,7 +23,6 @@
       width: 95rem;
     }
     @include mobile{
-
     }
     p {
       width: 81%;
@@ -31,7 +30,7 @@
         width: 68%;
       }
       @include mobile {
-        width: 34%;
+        width: 50%;
       }
     }
   }

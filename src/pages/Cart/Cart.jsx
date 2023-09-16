@@ -23,7 +23,7 @@ const Cart = () => {
   const [formData, setFormData] = useState(initState);
   const [errors, setErrors] = useState({});
   const [emailError, setEmailError] = useState("");
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
   const cartItems = useCartStore((state) => state.cartItems);
   console.log(success);

@@ -7,7 +7,7 @@ const ProductDetailsFigure = ({ data }) => {
   };
   return (
     <Link to={`/${data?.slug}`} onClick={scrollToTop}>
-      <figure>
+      <figure className="details-figure">
         <img src={data?.image?.desktop} alt={data?.name} className="details-img" />
       </figure>
     </Link>

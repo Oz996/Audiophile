@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 const CheckoutModal = ({ grandtotal, setSuccess }) => {
   const cartItems = useCartStore((state) => state.cartItems);
   const navigate = useNavigate();
+  const clearCart = useCartStore((state) => state.clearCart);
   return (
     <div className="checkout-modal">
       <div className="overlay" />
@@ -33,6 +34,7 @@ const CheckoutModal = ({ grandtotal, setSuccess }) => {
           onClick={() => {
             setSuccess(false);
             navigate("/");
+            clearCart();
           }}
         >
           Back to home

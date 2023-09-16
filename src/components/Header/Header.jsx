@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import "./Header.scss";
 import logo from "/assets/logo.svg";
@@ -12,6 +12,7 @@ export const Header = () => {
   const [showCategories, setShowCategories] = useState(false);
   const cartRef = useRef();
   const hamburgerRef = useRef();
+  const location = useLocation()
   const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
@@ -23,6 +24,10 @@ export const Header = () => {
         setShowCategories(false);
     });
   }, [hamburgerRef]);
+
+  useEffect(() => {
+    setShowCategories(false)
+  }, [location])
 
   return (
     <>
@@ -75,7 +80,7 @@ export const Header = () => {
                 </NavLink>
               </>
             ) : (
-              <div className="nav-categories slide-down">
+              <div className="nav-categories expand-down">
                 <div>
                   <CatergoryRow />
                 </div>

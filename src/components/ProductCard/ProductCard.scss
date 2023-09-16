@@ -1,6 +1,9 @@
 @use "../../sass/" as *;
 
 figure {
+  @include mobile{
+    
+  }
   img {
     width: 55rem;
     @include tablet {
@@ -13,10 +16,15 @@ figure {
     }
   }
 }
+.details-figure{
+  width: 40rem;
+  margin: 0 auto;
+}
 .details-img {
   @include mobile {
     margin: 0 auto;
     margin-bottom: -5rem;
+    width: 100%;
   }
 }
 .product-card {
@@ -29,6 +37,8 @@ figure {
     display: block;
   }
   @include mobile {
+    display: flex;
+    align-items: center !important;
   }
   .card-title {
     @include product-title;

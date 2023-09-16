@@ -10,6 +10,10 @@
   margin-top: 20rem;
   display: flex;
   gap: 4rem;
+  @include tablet{
+    flex-direction: column;
+    width: 80%;
+  }
   .checkout {
     width: 73rem;
     height: 112rem;
@@ -17,6 +21,9 @@
     padding-top: 5rem;
     background-color: $primary-background;
     border-radius: 0.8rem;
+    @include tablet{
+      margin: 0 auto;
+    }
     .container {
       width: 97%;
       margin: 0 auto;
@@ -57,12 +64,18 @@
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
+        @include mobile{
+          flex-direction: column;
+        }
         .payment {
           width: 64rem;
           margin: 0 auto;
           display: flex;
           justify-content: space-between;
           margin-top: 1rem;
+          @include mobile{
+            flex-direction: column;
+          }
         }
         .cash {
           display: flex;
@@ -82,6 +95,9 @@
 
           #address {
             width: 64rem;
+            @include mobile{
+              width: 31rem;
+            }
           }
           div{
             display: flex;
@@ -95,6 +111,10 @@
           gap: 2rem;
           width: 100%;
           margin-top: -3rem;
+          @include mobile{
+            margin-block: 1rem;
+            align-items: start;
+          }
           div {
             display: flex;
             align-items: center;
@@ -123,6 +143,13 @@
     padding: 2rem 3rem;
     display: flex;
     flex-direction: column;
+    @include tablet{
+      width: 100%;
+      margin: 0 auto;
+    }
+    @include mobile{
+      margin-top: 27rem;
+    }
     .cart-bottom {
       margin-top: auto;
       display: flex;
