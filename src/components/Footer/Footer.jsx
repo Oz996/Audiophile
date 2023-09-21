@@ -3,11 +3,9 @@ import "./Footer.scss";
 import logo from "/assets/logo.svg";
 import { ImFacebook2, ImTwitter } from "react-icons/im";
 import { FiInstagram } from "react-icons/fi";
+import { scrollToTop } from "../../utils/scrolls";
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  };
   return (
     <footer>
       <section className="footer-section">

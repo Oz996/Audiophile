@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Row.scss";
+import { scrollToTop } from "../../utils/scrolls";
 
 const Row = ({ data }) => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  };
   return (
     <section className="grid-row-3">
       {data?.others?.map((product, index) => (

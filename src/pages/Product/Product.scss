@@ -23,6 +23,7 @@
       width: 95rem;
     }
     @include mobile{
+      width: 80rem;
     }
     p {
       width: 81%;
@@ -100,12 +101,6 @@
   margin-bottom: 25rem;
   @include tablet {
     width: 90%;
-    :nth-child(1) {
-
-    }
-    :nth-child(2) {
-
-    }
     :nth-child(3) {
       width: 100%;
     }

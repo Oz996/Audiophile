@@ -1,13 +1,11 @@
 import "./CategoryRow.scss";
 import { Link } from "react-router-dom";
 import arrow from "/assets/arrow.svg";
+import { scrollToTopSmooth } from "../../utils/scrolls";
 
 const CatergoryRow = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  };
   return (
-    <div className="grid" onClick={scrollToTop}>
+    <div className="grid" onClick={scrollToTopSmooth}>
       <Link to="/headphones">
         <div>
           <figure className="headphones"></figure>
@@ -18,7 +16,7 @@ const CatergoryRow = () => {
           </div>
         </div>
       </Link>
-      <Link to="/speakers" onClick={scrollToTop}>
+      <Link to="/speakers" onClick={scrollToTopSmooth}>
         <div>
           <figure className="speakers"></figure>
           <h2>Speakers</h2>
@@ -28,7 +26,7 @@ const CatergoryRow = () => {
           </div>
         </div>
       </Link>
-      <Link to="/earphones" onClick={scrollToTop}>
+      <Link to="/earphones" onClick={scrollToTopSmooth}>
         <div>
           <figure className="earphones"></figure>
           <h2>Earphones</h2>

@@ -6,16 +6,14 @@ import { useEffect, useRef, useState } from "react";
 import CartPreview from "../CartPreview/CartPreview";
 import Hamburger from "/assets/shared/tablet/icon-hamburger.svg";
 import CatergoryRow from "../CategoryRow/CatergoryRow";
+import { scrollToTopSmooth } from "../../utils/scrolls";
 
 export const Header = () => {
   const [cartModal, setCartModal] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
   const cartRef = useRef();
   const hamburgerRef = useRef();
-  const location = useLocation()
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  };
+  const location = useLocation();
   console.log(cartModal);
 
   useEffect(() => {
@@ -26,8 +24,8 @@ export const Header = () => {
   }, [hamburgerRef]);
 
   useEffect(() => {
-    setShowCategories(false)
-  }, [location])
+    setShowCategories(false);
+  }, [location]);
 
   return (
     <>
@@ -39,19 +37,23 @@ export const Header = () => {
             className="hamburger"
             onClick={() => setShowCategories((prev) => !prev)}
           ></img>
-          <NavLink to="/" onClick={scrollToTop}>
+          <NavLink to="/" onClick={scrollToTopSmooth}>
             <img src={logo} alt="logo" className="logo" />
           </NavLink>
           <ul ref={hamburgerRef}>
             {!showCategories ? (
               <>
-                <NavLink to="/" onClick={scrollToTop} className="nav-link">
+                <NavLink
+                  to="/"
+                  onClick={scrollToTopSmooth}
+                  className="nav-link"
+                >
                   Home
                 </NavLink>
                 <NavLink
                   to="headphones"
                   onClick={() => {
-                    scrollToTop();
+                    scrollToTopSmooth();
                     setShowCategories(false);
                   }}
                   className="nav-link"
@@ -61,7 +63,7 @@ export const Header = () => {
                 <NavLink
                   to="speakers"
                   onClick={() => {
-                    scrollToTop();
+                    scrollToTopSmooth();
                     setShowCategories(false);
                   }}
                   className="nav-link"
@@ -71,7 +73,7 @@ export const Header = () => {
                 <NavLink
                   to="earphones"
                   onClick={() => {
-                    scrollToTop();
+                    scrollToTopSmooth();
                     setShowCategories(false);
                   }}
                   className="nav-link"

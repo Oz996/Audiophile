@@ -4,15 +4,13 @@ import { getProducts } from "../../api/products";
 import CatergoryRow from "../../components/CategoryRow/CatergoryRow";
 import Aside from "../../components/Aside/Aside";
 import { Link } from "react-router-dom";
+import { scrollToTop } from "../../utils/scrolls";
 
 const Home = () => {
   const { data = [] } = useQuery({
     queryKey: ["products"],
     queryFn: getProducts,
   });
-  const scrollToTop = () => {
-    window.scrollTo(0, 0);
-  };
   return (
     <>
       <main>
@@ -58,7 +56,7 @@ const Home = () => {
       </article>
 
       <article className="earphones-home-div">
-        <div className="earphones-home"/>
+        <div className="earphones-home" />
         <div className="earphones-home-second">
           <h2>Yx1 earphones</h2>
           <Link to={`/${data[0]?.slug}`} onClick={scrollToTop}>

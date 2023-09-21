@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 import "./ProductCard.scss";
+import { scrollToTop } from "../../utils/scrolls";
 
 const ProductFigure = ({ data }) => {
-  const scrollToTop = () => {
-    window.scrollTo(0, 0);
-  };
   return (
     <Link to={`/${data?.slug}`} onClick={scrollToTop}>
       <figure>
