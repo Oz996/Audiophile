@@ -24,7 +24,7 @@ const Home = () => {
                 made for the passionate music enthusiast.
               </p>
               <Link to={`/${data[3]?.slug}`}>
-                <button>see product</button>
+                <button onClick={scrollToTop}>see product</button>
               </Link>
             </div>
           </div>

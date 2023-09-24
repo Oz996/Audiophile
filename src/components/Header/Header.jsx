@@ -43,43 +43,51 @@ export const Header = () => {
           <ul ref={hamburgerRef}>
             {!showCategories ? (
               <>
-                <NavLink
-                  to="/"
-                  onClick={scrollToTopSmooth}
-                  className="nav-link"
-                >
-                  Home
-                </NavLink>
-                <NavLink
-                  to="headphones"
-                  onClick={() => {
-                    scrollToTopSmooth();
-                    setShowCategories(false);
-                  }}
-                  className="nav-link"
-                >
-                  Headphones
-                </NavLink>
-                <NavLink
-                  to="speakers"
-                  onClick={() => {
-                    scrollToTopSmooth();
-                    setShowCategories(false);
-                  }}
-                  className="nav-link"
-                >
-                  Speakers
-                </NavLink>
-                <NavLink
-                  to="earphones"
-                  onClick={() => {
-                    scrollToTopSmooth();
-                    setShowCategories(false);
-                  }}
-                  className="nav-link"
-                >
-                  Earphones
-                </NavLink>
+                <li>
+                  <NavLink
+                    to="/"
+                    onClick={scrollToTopSmooth}
+                    className="nav-link"
+                  >
+                    Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="headphones"
+                    onClick={() => {
+                      scrollToTopSmooth();
+                      setShowCategories(false);
+                    }}
+                    className="nav-link"
+                  >
+                    Headphones
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="speakers"
+                    onClick={() => {
+                      scrollToTopSmooth();
+                      setShowCategories(false);
+                    }}
+                    className="nav-link"
+                  >
+                    Speakers
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="earphones"
+                    onClick={() => {
+                      scrollToTopSmooth();
+                      setShowCategories(false);
+                    }}
+                    className="nav-link"
+                  >
+                    Earphones
+                  </NavLink>
+                </li>
               </>
             ) : (
               <div className="nav-categories expand-down">

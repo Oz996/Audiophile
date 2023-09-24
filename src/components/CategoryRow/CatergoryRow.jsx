@@ -5,7 +5,7 @@ import { scrollToTopSmooth } from "../../utils/scrolls";
 
 const CatergoryRow = () => {
   return (
-    <div className="grid" onClick={scrollToTopSmooth}>
+    <article className="grid" onClick={scrollToTopSmooth}>
       <Link to="/headphones">
         <div>
           <figure className="headphones"></figure>
@@ -36,7 +36,7 @@ const CatergoryRow = () => {
           </div>
         </div>
       </Link>
-    </div>
+    </article>
   );
 };
 

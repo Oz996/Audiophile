@@ -4,7 +4,7 @@ import "./ProductDetails.scss";
 const ProductDetails = ({ data }) => {
   const addToCart = useCartStore((state) => state.addToCart);
   return (
-    <main className="product-card">
+    <article className="product-card">
       <div className="new-div">
         <span className="new">New product</span>
         <h2 className="details-title">{data?.name}</h2>
@@ -19,7 +19,7 @@ const ProductDetails = ({ data }) => {
           Add To Cart
         </button>
       </div>
-    </main>
+    </article>
   );
 };
 

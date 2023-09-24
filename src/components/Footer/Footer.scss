@@ -22,7 +22,6 @@ footer {
       flex-direction: column;
     }
     @include mobile {
-      justify-content: start;
     }
 
     .rectangle {
@@ -34,11 +33,6 @@ footer {
         position: relative;
       }
       @include mobile {
-        display: block;
-        position: relative;
-        bottom: 34rem;
-        left: 40%;
-        top: -34rem;
       }
     }
     .footer-text {
@@ -54,9 +48,7 @@ footer {
           margin-top: 2.5rem;
         }
         @include mobile {
-          position: relative;
-          left: 37%;
-          margin-bottom: 1rem;
+          align-self: center;
         }
       }
       p {
@@ -69,10 +61,8 @@ footer {
           top: 5rem;
         }
         @include mobile {
-          text-align: center;
-          top: 28rem;
-          left: 15%;
           width: 90%;
+          text-align: center;
         }
       }
       .copyright {
@@ -97,9 +87,6 @@ footer {
         bottom: 6rem;
       }
       @include mobile {
-        flex-direction: column;
-        text-align: center;
-        margin-top: 5rem;
       }
       a {
         @include navlink;
@@ -116,8 +103,7 @@ footer {
         top: 5rem;
       }
       @include mobile {
-        top: 27rem;
-        right: 33%;
+        justify-content: center;
       }
       .footer-icon {
         color: white;

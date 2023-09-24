@@ -4,7 +4,7 @@ import { scrollToTop } from "../../utils/scrolls";
 
 const Row = ({ data }) => {
   return (
-    <section className="grid-row-3">
+    <article className="grid-row-3">
       {data?.others?.map((product, index) => (
         <div key={index}>
           <div className="row-div">
@@ -20,7 +20,7 @@ const Row = ({ data }) => {
           </div>
         </div>
       ))}
-    </section>
+    </article>
   );
 };
 
