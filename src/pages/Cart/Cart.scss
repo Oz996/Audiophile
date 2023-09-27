@@ -14,6 +14,9 @@
     flex-direction: column;
     width: 80%;
   }
+  @include mobile{
+    width: 100%;
+  }
   .checkout {
     width: 73rem;
     height: 112rem;

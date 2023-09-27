@@ -54,7 +54,7 @@
   .new-div {
     .details-title {
       @include product-title;
-      width: 27.5rem;
+      width: 40rem;
       @include tablet {
         margin-bottom: 1rem !important;
         font-size: 3rem;
@@ -67,6 +67,7 @@
     }
   }
   .product-details {
+    width: 50rem;
     @include paragaph;
     @include tablet {
       width: 33rem !important;

@@ -19,6 +19,12 @@ header {
     @include tablet {
       width: 90%;
     }
+    .nav-items {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+      margin-left: 3rem;
+    }
     .hamburger {
       display: none;
       @include tablet {
@@ -34,7 +40,24 @@ header {
         top: 3.5rem;
       }
     }
+    .cart-icon-div {
+      position: relative;
+      width: 3.5rem;
+      display: flex;
+      align-items: center;
 
+      .cart-icon-quantity {
+        position: absolute;
+        bottom: 1rem;
+        right: 3rem;
+        color: $primary-orange;
+        font-size: 1.7rem;
+        font-weight: 900;
+        border-radius: 100%;
+        padding: 0.2rem 0.5rem;
+        z-index: 1;
+      }
+    }
     ul {
       display: flex;
       gap: 3.4rem;
@@ -60,26 +83,24 @@ header {
           left: 0;
           border-radius: 0 0 0.8rem 0.8rem;
           z-index: 1;
-          figure{
+          figure {
             width: 15rem;
           }
-          .grid{
+          .grid {
             gap: 0;
             margin: 0 !important;
-            div{
+            div {
               gap: 0;
-              margin-bottom: -.8rem;
+              margin-bottom: -0.8rem;
             }
           }
-          @include mobile{
-
+          @include mobile {
           }
         }
         div {
-            .grid{
+          .grid {
             margin-top: 8rem;
           }
-        
         }
       }
     }

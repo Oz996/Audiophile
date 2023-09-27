@@ -7,10 +7,12 @@ import CartPreview from "../CartPreview/CartPreview";
 import Hamburger from "/assets/shared/tablet/icon-hamburger.svg";
 import CatergoryRow from "../CategoryRow/CatergoryRow";
 import { scrollToTopSmooth } from "../../utils/scrolls";
+import useCartStore from "../../zustand/cartStore";
 
 export const Header = () => {
   const [cartModal, setCartModal] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
+  const cartItems = useCartStore((state) => state.cartItems);
   const cartRef = useRef();
   const hamburgerRef = useRef();
   const location = useLocation();
@@ -42,7 +44,7 @@ export const Header = () => {
           </NavLink>
           <ul ref={hamburgerRef}>
             {!showCategories ? (
-              <>
+              <div className="nav-items">
                 <li>
                   <NavLink
                     to="/"
@@ -88,7 +90,7 @@ export const Header = () => {
                     Earphones
                   </NavLink>
                 </li>
-              </>
+              </div>
             ) : (
               <div className="nav-categories expand-down">
                 <div>
@@ -97,11 +99,16 @@ export const Header = () => {
               </div>
             )}
           </ul>
-          <AiOutlineShoppingCart
-            size={28}
-            className="cart-icon"
-            onClick={() => setCartModal((prev) => !prev)}
-          />
+          <div className="cart-icon-div">
+            <p className="cart-icon-quantity">
+              {cartItems.length > 0 && cartItems.length}
+            </p>
+            <AiOutlineShoppingCart
+              size={28}
+              className="cart-icon"
+              onClick={() => setCartModal((prev) => !prev)}
+            />
+          </div>
         </nav>
         {cartModal && (
           <CartPreview

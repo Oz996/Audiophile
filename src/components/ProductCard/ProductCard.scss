@@ -1,8 +1,7 @@
 @use "../../sass/" as *;
 
 figure {
-  @include mobile{
-    
+  @include mobile {
   }
   img {
     width: 55rem;
@@ -16,9 +15,13 @@ figure {
     }
   }
 }
-.details-figure{
+.details-figure {
   width: 40rem;
   margin: 0 auto;
+  margin-right: 10rem;
+  @include tablet {
+    margin: 0 auto;
+  }
 }
 .details-img {
   @include mobile {
