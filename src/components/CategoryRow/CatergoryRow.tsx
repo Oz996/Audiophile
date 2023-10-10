@@ -1,6 +1,5 @@
 import "./CategoryRow.scss";
 import { Link } from "react-router-dom";
-import arrow from "/assets/arrow.svg";
 import { scrollToTopSmooth } from "../../utils/scrolls";
 
 const CatergoryRow = () => {
@@ -12,7 +11,7 @@ const CatergoryRow = () => {
           <h2>Headphones</h2>
           <div>
             <span>Shop</span>
-            <img src={arrow} alt="arrow" />
+            <img src="/assets/arrow.svg" alt="arrow" />
           </div>
         </div>
       </Link>
@@ -22,7 +21,7 @@ const CatergoryRow = () => {
           <h2>Speakers</h2>
           <div>
             <span>Shop</span>
-            <img src={arrow} alt="arrow" />
+            <img src="/assets/arrow.svg" alt="arrow" />
           </div>
         </div>
       </Link>
@@ -32,7 +31,7 @@ const CatergoryRow = () => {
           <h2>Earphones</h2>
           <div className="shop-div">
             <span>Shop</span>
-            <img src={arrow} alt="arrow" />
+            <img src="/assets/arrow.svg" alt="arrow" />
           </div>
         </div>
       </Link>

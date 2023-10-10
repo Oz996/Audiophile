@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import "./Footer.scss";
-import logo from "/assets/logo.svg";
 import { ImFacebook2, ImTwitter } from "react-icons/im";
 import { FiInstagram } from "react-icons/fi";
 import { scrollToTop } from "../../utils/scrolls";
@@ -10,7 +9,7 @@ const Footer = () => {
     <footer>
       <section className="footer-section">
         <div className="footer-text">
-          <img src={logo} alt="logo" />
+          <img src="/assets/logo.svg" alt="logo" />
           <p>
             Audiophile is an all in one stop to fulfill your audio needs. We're
             a small team of music lovers and sound specialists who are devoted

@@ -1,8 +1,21 @@
 import { create } from "zustand";
+import { CartItem, Product } from "../../types/types";
 
-const useCartStore = create((set) => ({
+interface CartStoreActions {
+  addToCart: (product: Product) => void
+  incrementQuantity: (productId: number) => void
+  decrementQuantity: (productId: number) => void
+  removeFromCart: (productId: number) => void
+  clearCart: () => void
+}
+
+interface CartStoreState extends CartStoreActions{
+  cartItems: CartItem[];
+}
+
+const useCartStore = create<CartStoreState>((set) => ({
   cartItems: [],
-  addToCart: (product) => {
+  addToCart: (product: Product) => {
     set((state) => {
       const existingProduct = state.cartItems.find(
         (item) => item.id === product.id
@@ -20,14 +33,14 @@ const useCartStore = create((set) => ({
       }
     });
   },
-  incrementQuantity: (productId) => {
+  incrementQuantity: (productId: number) => {
     set((state) => ({
       cartItems: state.cartItems.map((item) =>
         item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
       ),
     }));
   },
-  decrementQuantity: (productId) => {
+  decrementQuantity: (productId: number) => {
     set((state) => ({
       cartItems: state.cartItems.map((item) =>
         item.id === productId && item.quantity > 1
@@ -36,7 +49,7 @@ const useCartStore = create((set) => ({
       ),
     }));
   },
-  removeFromCart: (productId) => {
+  removeFromCart: (productId: number) => {
     set((state) => ({
       cartItems: state.cartItems.filter((item) => item.id !== productId),
     }));
@@ -45,5 +58,4 @@ const useCartStore = create((set) => ({
     set({ cartItems: [] });
   },
 }));
-console.log(useCartStore.cartItems);
 export default useCartStore;

@@ -35,10 +35,10 @@
   background-color: white;
   display: flex;
   z-index: 1;
-  @include tablet{
+  @include tablet {
     right: 3%;
   }
-  @include mobile{
+  @include mobile {
     right: 9.3%;
   }
   .modal-inner {
@@ -93,13 +93,16 @@
               color: $primary-orange;
             }
           }
-          input {
+          p {
             border: none;
             background-color: $secondary-background;
             font-weight: 700;
-            text-align: center;
+            font-size: 1.45rem;
             height: 4rem;
             width: 3.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
         }
       }
@@ -111,8 +114,8 @@
         :nth-child(1) {
           font-size: 1.5rem;
           font-weight: 700;
-          transition: .2s;
-          &:hover{
+          transition: 0.2s;
+          &:hover {
             color: $primary-orange;
           }
         }

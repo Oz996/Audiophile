@@ -1,7 +1,8 @@
+import { Product } from "../../../types/types";
 import useCartStore from "../../zustand/cartStore";
 import "./ProductDetails.scss";
 
-const ProductDetails = ({ data }) => {
+const ProductDetails = ({ data }: { data: Product }) => {
   const addToCart = useCartStore((state) => state.addToCart);
   return (
     <article className="product-card">

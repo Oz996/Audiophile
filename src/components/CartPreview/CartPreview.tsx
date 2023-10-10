@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { ReactElement, useEffect, useRef } from "react";
 import useCartStore from "../../zustand/cartStore";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
@@ -6,17 +6,21 @@ import "./CartPreview.scss";
 import { useNavigate } from "react-router-dom";
 import CartCard from "../CartCard/CartCard";
 
-const CartPreview = ({ setCartModal }) => {
+interface props {
+  setCartModal: (value: boolean) => void;
+}
+
+const CartPreview: React.FC<props> = ({ setCartModal }) => {
   const cartItems = useCartStore((state) => state.cartItems);
   const clearCart = useCartStore((state) => state.clearCart);
   const incrementQuantity = useCartStore((state) => state.incrementQuantity);
   const decrementQuantity = useCartStore((state) => state.decrementQuantity);
-  const cartRef = useRef();
+  const cartRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.addEventListener("mousedown", (e) => {
-      if (cartRef.current && !cartRef.current.contains(e.target))
+    document.addEventListener("mousedown", (e: MouseEvent) => {
+      if (cartRef.current && !cartRef.current.contains(e.target as Node))
         setCartModal(false);
     });
   }, [cartRef, setCartModal]);
@@ -53,11 +57,7 @@ const CartPreview = ({ setCartModal }) => {
                         <button onClick={() => decrementQuantity(item.id)}>
                           -
                         </button>
-                        <input
-                          type="text"
-                          disabled={true}
-                          placeholder={item?.quantity}
-                        />
+                        <p>{item?.quantity}</p>
                         <button onClick={() => incrementQuantity(item.id)}>
                           +
                         </button>

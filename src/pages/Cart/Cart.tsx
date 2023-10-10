@@ -2,11 +2,22 @@ import { useNavigate } from "react-router-dom";
 import "./Cart.scss";
 import useCartStore from "../../zustand/cartStore";
 import CartCard from "../../components/CartCard/CartCard";
-import { useState } from "react";
-import cash from "/assets/cash.svg";
+import React, { ChangeEvent, useState } from "react";
 import CheckoutModal from "../../components/CheckoutModal/CheckoutModal";
 
-const initState = {
+interface Error {
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+  zip: string;
+  city: string;
+  country: string;
+  eNumber: string;
+  ePin: string;
+}
+
+const initState: Error = {
   name: "",
   email: "",
   phone: "",
@@ -21,8 +32,8 @@ const initState = {
 const Cart = () => {
   const [emoney, setEmoney] = useState(true);
   const [formData, setFormData] = useState(initState);
-  const [errors, setErrors] = useState({});
-  const [emailError, setEmailError] = useState("");
+  const [errors, setErrors] = useState<Error>({});
+  const [emailError] = useState("");
   const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
   const cartItems = useCartStore((state) => state.cartItems);
@@ -35,7 +46,7 @@ const Cart = () => {
   const vat = parseInt(cartTotal * 0.2);
   const grandtotal = cartTotal + shipping;
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData((data) => {
       return {
         ...data,
@@ -43,7 +54,7 @@ const Cart = () => {
       };
     });
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     const emptyFields = Object.entries(formData)
@@ -241,7 +252,7 @@ const Cart = () => {
                     </>
                   ) : (
                     <div className="cash">
-                      <img src={cash} alt="" />
+                      <img src="/assets/cash.svg" alt="" />
                       <p>
                         The ‘Cash on Delivery’ option enables you to pay in cash
                         when our delivery courier arrives at your residence.

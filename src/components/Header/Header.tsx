@@ -1,10 +1,8 @@
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import "./Header.scss";
-import logo from "/assets/logo.svg";
 import { useEffect, useRef, useState } from "react";
 import CartPreview from "../CartPreview/CartPreview";
-import Hamburger from "/assets/shared/tablet/icon-hamburger.svg";
 import CatergoryRow from "../CategoryRow/CatergoryRow";
 import { scrollToTopSmooth } from "../../utils/scrolls";
 import useCartStore from "../../zustand/cartStore";
@@ -13,14 +11,16 @@ export const Header = () => {
   const [cartModal, setCartModal] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
   const cartItems = useCartStore((state) => state.cartItems);
-  const cartRef = useRef();
-  const hamburgerRef = useRef();
+  const hamburgerRef = useRef<HTMLUListElement | null>(null);
   const location = useLocation();
   console.log(cartModal);
 
   useEffect(() => {
-    document.addEventListener("mousedown", (e) => {
-      if (hamburgerRef.current && !hamburgerRef.current.contains(e.target))
+    document.addEventListener("mousedown", (e: MouseEvent) => {
+      if (
+        hamburgerRef.current &&
+        !hamburgerRef.current.contains(e.target as Node)
+      )
         setShowCategories(false);
     });
   }, [hamburgerRef]);
@@ -34,13 +34,13 @@ export const Header = () => {
       <header>
         <nav>
           <img
-            src={Hamburger}
+            src="/assets/shared/tablet/icon-hamburger.svg"
             alt="navbar icon"
             className="hamburger"
             onClick={() => setShowCategories((prev) => !prev)}
           ></img>
           <NavLink to="/" onClick={scrollToTopSmooth}>
-            <img src={logo} alt="logo" className="logo" />
+            <img src="/assets/logo.svg" alt="logo" className="logo" />
           </NavLink>
           <ul ref={hamburgerRef}>
             {!showCategories ? (
@@ -110,13 +110,7 @@ export const Header = () => {
             />
           </div>
         </nav>
-        {cartModal && (
-          <CartPreview
-            cartRef={cartRef}
-            cartModal={cartModal}
-            setCartModal={setCartModal}
-          />
-        )}
+        {cartModal && <CartPreview setCartModal={setCartModal} />}
       </header>
       <Outlet />
     </>

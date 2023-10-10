@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import "./CartCard.scss";
+import { Product } from "../../../types/types";
 
-const CartCard = ({ item }) => {
+const CartCard = ({ item }: {item: Product}) => {
   const name = item?.name?.split(" ")[0];
   return (
     <>

@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import "./Row.scss";
 import { scrollToTop } from "../../utils/scrolls";
+import { Others } from "../../../types/types";
 
-const Row = ({ data }) => {
+interface prop {
+  others: Others[];
+}
+
+const Row = ({ data }: { data: prop }) => {
   return (
     <article className="grid-row-3">
       {data?.others?.map((product, index) => (

@@ -5,9 +5,10 @@ import { getProducts } from "../api/products";
 import CatergoryRow from "../components/CategoryRow/CatergoryRow";
 import Aside from "../components/Aside/Aside";
 import { useEffect, useState } from "react";
+import { Product } from "../../types/types";
 
 const Earphones = () => {
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState<Product[]>([]);
   const { data = [] } = useQuery({
     queryKey: ["products"],
     queryFn: getProducts,

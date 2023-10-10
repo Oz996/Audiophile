@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import "./ProductCard.scss";
 import { scrollToTop } from "../../utils/scrolls";
+import { Product } from "../../../types/types";
 
-const ProductCard = ({ data }) => {
+const ProductCard = ({ data }: { data: Product }) => {
   return (
     <article className="product-card">
       <div className="new-div">

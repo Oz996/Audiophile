@@ -1,5 +1,4 @@
 import "./Aside.scss";
-import aside from "/assets/shared/desktop/image-best-gear.jpg";
 
 const Aside = () => {
   return (
@@ -17,7 +16,7 @@ const Aside = () => {
           best place to buy your portable audio equipment.
         </p>
       </div>
-      <div className="aside-div"/>
+      <div className="aside-div" />
     </aside>
   );
 };
