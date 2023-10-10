@@ -29,6 +29,20 @@ export const Header = () => {
     setShowCategories(false);
   }, [location]);
 
+  useEffect(() => {
+    const cart = cartItems.length > 0;
+    if (cart) {
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+    }
+  }, [cartItems]);
+
+  useEffect(() => {
+    const cart = localStorage.getItem("cart")
+    if (cart) {
+      const parsedCart = JSON.parse(cart)
+    }
+  },[])
+
   return (
     <>
       <header>

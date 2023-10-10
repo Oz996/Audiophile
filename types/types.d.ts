@@ -14,9 +14,7 @@ export interface Product {
   others: Others;
 }
 
-export interface CartItem extends Product{
-    quantity: number
-}
+
 
 interface CategoryImage {
   desktop: string;
