@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { Product } from "../../types/types";
+import { CartItem, Product } from "../../types/types";
 
 interface CartStoreActions {
   addToCart: (product: Product) => void;
@@ -8,10 +8,6 @@ interface CartStoreActions {
   decrementQuantity: (productId: number) => void;
   removeFromCart: (productId: number) => void;
   clearCart: () => void;
-}
-
-interface CartItem extends Product {
-  quantity: number;
 }
 
 interface CartStoreState extends CartStoreActions {

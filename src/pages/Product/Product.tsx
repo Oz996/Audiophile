@@ -7,10 +7,13 @@ import Row from "../../components/Row/Row";
 import CatergoryRow from "../../components/CategoryRow/CatergoryRow";
 import Aside from "../../components/Aside/Aside";
 import ProductDetailsFigure from "../../components/ProductCard/ProductDetailsFigure";
+import { CartItem } from "../../../types/types";
 
 const Product = () => {
   const { slug } = useParams();
-  const { data } = useQuery(["product", slug], () => getProductBySlug(slug));
+  const { data } = useQuery(["product", slug], () =>
+    getProductBySlug(slug as string)
+  );
   console.log(data);
 
   const navigate = useNavigate();
@@ -35,7 +38,7 @@ const Product = () => {
         </div>
         <div className="product-box">
           <h1>In the box</h1>
-          {data?.includes?.map((item, index) => (
+          {data?.includes?.map((item: CartItem, index: number) => (
             <div className="includes" key={index}>
               <span className="item-quantity">{item.quantity}x</span>
               <span className="item-content">{item.item}</span>

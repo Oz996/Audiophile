@@ -12,9 +12,12 @@ export interface Product {
   image: ProductImage;
   includes: Includes;
   others: Others;
+  item: string;
 }
 
-
+export interface CartItem extends Product {
+  quantity: number;
+}
 
 interface CategoryImage {
   desktop: string;

@@ -6,7 +6,7 @@ footer {
   height: 36.5rem;
   margin-top: 20rem;
   @include mobile {
-    height: 80rem;
+    height: 95rem;
   }
 
   .footer-section {
@@ -15,6 +15,7 @@ footer {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    position: relative;
     @include tablet {
       padding-block: 5rem;
       width: 90%;
@@ -30,7 +31,7 @@ footer {
       height: 0.4rem;
       background-color: $primary-orange;
       @include tablet {
-        position: relative;
+        top: 0;
       }
       @include mobile {
       }
@@ -85,8 +86,11 @@ footer {
       @include tablet {
         position: relative;
         bottom: 6rem;
+        text-align: center;
       }
       @include mobile {
+        flex-direction: column;
+        bottom: 0;
       }
       a {
         @include navlink;
